@@ -1,0 +1,80 @@
+@import "../../variables.modules";
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.backgroundElement {
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 150vw;
+  height: 150vw;
+  position: absolute;
+  top: -50vw;
+  left: -25vw;
+  z-index: -1;
+  animation: rotate 20s linear infinite, parallax 5s ease-in-out infinite alternate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes parallax {
+  from { transform: translateY(0) rotate(0); }
+  to { transform: translateY(-20px) rotate(360deg); }
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.position {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.hand {
+  animation-name: wave;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% { transform: rotate( 0.0deg) }
+  10% { transform: rotate(14.0deg) }
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}
+
+a {
+  color: $dark;
+  transition: color 200ms ease;
+}
+
+a:hover {
+  color: $lightgray;
+  transition: color 200ms ease;
+}

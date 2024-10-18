@@ -1,0 +1,56 @@
+@import "../../variables.modules";
+
+.pink {
+  color: $pink;
+}
+
+.green {
+  color: $green;
+}
+
+.skills {
+  columns: 1;
+  @media only screen and (min-width: 940px) {
+    columns: 2;
+  }
+
+  li {
+    margin: 0;
+    line-height: 1.75;
+  }
+}
+
+.terminalContainer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  &:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills, .misc {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.skills li, .misc li {
+  margin-bottom: 0.5rem;
+}

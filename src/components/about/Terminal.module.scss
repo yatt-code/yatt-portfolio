@@ -1,0 +1,88 @@
+@import "../../variables.modules";
+
+i {
+  padding-left: 0.5rem;
+
+  &.red {
+    color: $red;
+  }
+
+  &.amber {
+    color: $yellow;
+  }
+
+  &.green {
+    color: $green;
+  }
+}
+
+.terminal {
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+  }
+}
+
+.terminal__header {
+  background-color: #e0e0e0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.terminal__button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+
+  &:nth-child(1) {
+    background-color: #ff5f56;
+  }
+
+  &:nth-child(2) {
+    background-color: #ffbd2e;
+  }
+
+  &:nth-child(3) {
+    background-color: #27c93f;
+  }
+}
+
+.terminal__body {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.green {
+  color: $green;
+}
+
+.skills, .misc {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.skills li, .misc li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .terminal {
+    width: 95%;
+  }
+}
